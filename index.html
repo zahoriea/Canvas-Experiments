@@ -57,6 +57,12 @@
 				mouseY = event.clientY;
 			});
 
+			$(canvas).on('touchstart touchmove', function(event) {
+				mouseX = event.originalEvent.touches[0].pageX;
+				mouseY = event.originalEvent.touches[0].pageY;
+				event.preventDefault();
+			});
+
 			animate();
 
 		})();
